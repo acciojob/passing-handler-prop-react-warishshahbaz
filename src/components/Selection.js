@@ -1,18 +1,15 @@
 import React from "react";
 
-function Selection({ val, handleClicked, nextBackground, state }) {
-  console.log(val, nextBackground, "applyColor");
+function Selection({ val, handleClicked }) {
   return (
     <div
       style={{
-        backgroundColor: `${
-          state.includes(val) ? nextBackground.background : ""
-        }`,
+        backgroundColor: `${val.bg}`,
       }}
       onClick={() => handleClicked(val)}
-      className="selection"
+      className="fix-box"
     >
-      {val}
+      {val.title}
     </div>
   );
 }

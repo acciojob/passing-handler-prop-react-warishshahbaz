@@ -28,13 +28,22 @@ const title = "Select the gradient and then the Box to change the color";
 
 const App = () => {
   let [nextBackground, selectNextBackground] = useState({ background: "" });
-  const [state, setState] = useState([]);
+  const [state, setState] = useState(Data);
 
   const applyColor = (updateSelectionStyle) => {
     updateSelectionStyle(nextBackground);
   };
   const handleClicked = (key) => {
-    setState([...state, key]);
+    let res = state.map((val) => {
+      if (val.title === key.title) {
+        return {
+          ...val,
+          bg: nextBackground.background ?? "",
+        };
+      }
+      return val;
+    });
+    setState(res);
   };
 
   return (
@@ -55,14 +64,13 @@ const App = () => {
       </div>
 
       <div className="row" id="children-wrapper">
-        {dummy.map((val) => {
+        {state.map((val) => {
           console.log(val);
           return (
             <Selection
               val={val}
               applyColor={applyColor}
               handleClicked={handleClicked}
-              nextBackground={nextBackground}
               state={state}
             />
           );
@@ -72,5 +80,9 @@ const App = () => {
   );
 };
 
-let dummy = ["selection1", "selection2", "selection3"];
+let Data = [
+  { title: "selection 1", bg: "", picked: false },
+  { title: "selection 2", bg: "", picked: false },
+  { title: "selection 3", bg: "", picked: false },
+];
 export default App;
