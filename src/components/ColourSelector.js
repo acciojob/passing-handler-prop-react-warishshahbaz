@@ -8,7 +8,6 @@ const ColourSelector = (props) => {
     <button
       className={`${config?.classname}`}
       onClick={() => {
-        // setState([]);
         selectNextBackground({ background: background });
       }}
     >

@@ -81,8 +81,8 @@ const App = () => {
 };
 
 let Data = [
-  { title: "selection 1", bg: "", picked: false },
-  { title: "selection 2", bg: "", picked: false },
-  { title: "selection 3", bg: "", picked: false },
+  { title: "selection 1", bg: "" },
+  { title: "selection 2", bg: "" },
+  { title: "selection 3", bg: "" },
 ];
 export default App;
