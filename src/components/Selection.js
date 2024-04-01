@@ -3,7 +3,7 @@ import React from "react";
 function Selection({ val, handleClicked }) {
   return (
     <div
-      data-testid={`${val.bg}`}
+      data-testid="blue"
       style={{
         backgroundColor: `${val.bg}`,
       }}
