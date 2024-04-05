@@ -1,16 +1,11 @@
 import React from "react";
 
-function Selection({ val, handleClicked }) {
+function Selection({ selectedColor }) {
   return (
-    <div
-      data-testid="blue"
-      style={{
-        backgroundColor: `${val.bg}`,
-      }}
-      onClick={() => handleClicked(val)}
-      className="fix-box"
-    >
-      {val.title}
+    <div className="selection">
+      <div className="fix-box" style={{ backgroundColor: selectedColor }}></div>
+      <div className="fix-box" style={{ backgroundColor: selectedColor }}></div>
+      <div className="fix-box" style={{ backgroundColor: selectedColor }}></div>
     </div>
   );
 }
